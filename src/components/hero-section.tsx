@@ -3,6 +3,7 @@
 import React, { useRef, useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
+import { ArrowRight } from "lucide-react"
 
 export function Hero() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
@@ -33,8 +34,8 @@ export function Hero() {
     }
   }
 
-  const letterVariants = {
-    hidden: { opacity: 0, y: 50 },
+  const wordVariants = {
+    hidden: { opacity: 0, y: 20 },
     visible: { 
       opacity: 1, 
       y: 0,
@@ -46,86 +47,107 @@ export function Hero() {
     }
   }
 
-  // Split headline text for letter animation
+  // Split headline text into words for animation
   const headlineText = "I choreograph attention."
-  const headlineLetters = headlineText.split("")
+  const headlineWords = headlineText.split(" ")
 
   return (
     <div 
       ref={heroRef}
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 md:px-8"
+      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
     >
-      {/* Animated background */}
+      <div className="max-w-5xl mx-auto px-6 py-32 text-center space-y-8 relative z-10">
+        {/* Label above heading */}
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-xs uppercase tracking-wider text-muted-foreground font-medium"
+        >
+          Hi, I&apos;m Javier Goodall — Frontend Developer
+        </motion.div>
+
+        {/* Animated heading with word-by-word animation */}
+        <motion.h1 
+          className="text-5xl md:text-6xl font-extrabold tracking-tight leading-tight"
+          variants={headlineVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          {headlineWords.map((word, index) => (
+            <motion.span
+              key={index}
+              variants={wordVariants}
+              className="inline-block"
+              style={{ 
+                marginRight: index < headlineWords.length - 1 ? "0.5em" : "0"
+              }}
+            >
+              {word}
+            </motion.span>
+          ))}
+        </motion.h1>
+
+        {/* Subheading with animation */}
+        <motion.p 
+          className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5, duration: 0.8 }}
+        >
+          Frontend developer who designs for clarity, not just code.
+        </motion.p>
+
+        {/* Buttons with animation */}
+        <motion.div 
+          className="flex gap-4 flex-wrap justify-center mt-6"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8, duration: 0.8 }}
+        >
+          <Button 
+            size="lg" 
+            variant="default"
+            className="transition-transform hover:scale-105"
+          >
+            View My Work
+            <ArrowRight className="h-4 w-4" />
+          </Button>
+          <Button 
+            size="lg" 
+            variant="ghost"
+            className="transition-transform hover:scale-105"
+          >
+            Let&apos;s Connect
+          </Button>
+        </motion.div>
+      </div>
+
+      {/* Interactive background effect */}
       <motion.div 
         className="absolute inset-0 -z-10"
         style={{
           background: `radial-gradient(circle at ${mousePosition.x * 100}% ${mousePosition.y * 100}%, 
-                      rgba(var(--color-primary-rgb), 0.15), 
-                      rgba(var(--color-primary-rgb), 0.05) 40%, 
-                      transparent 60%)`,
+                    rgba(100, 100, 255, 0.15), 
+                    rgba(100, 100, 255, 0.05) 40%, 
+                    transparent 60%)`,
         }}
         animate={{
           background: `radial-gradient(circle at ${mousePosition.x * 100}% ${mousePosition.y * 100}%, 
-                      rgba(var(--color-primary-rgb), 0.15), 
-                      rgba(var(--color-primary-rgb), 0.05) 40%, 
-                      transparent 60%)`
+                    rgba(100, 100, 255, 0.15), 
+                    rgba(100, 100, 255, 0.05) 40%, 
+                    transparent 60%)`
         }}
         transition={{ duration: 0.5 }}
       />
 
-      <div className="container max-w-5xl">
-        <div className="flex flex-col gap-12 items-center text-center lg:items-start lg:text-left">
-          {/* Animated heading */}
-          <motion.h1 
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight"
-            variants={headlineVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            {headlineLetters.map((letter, index) => (
-              <motion.span
-                key={index}
-                variants={letterVariants}
-                className="inline-block"
-                style={{ 
-                  display: letter === " " ? "inline" : "inline-block",
-                  marginRight: letter === " " ? "0.5em" : "0"
-                }}
-              >
-                {letter}
-              </motion.span>
-            ))}
-          </motion.h1>
-
-          {/* Subheading with animation */}
-          <motion.p 
-            className="text-xl sm:text-2xl text-muted-foreground max-w-md lg:max-w-2xl"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-          >
-            Frontend dev who designs for clarity, not just code.
-          </motion.p>
-
-          {/* Buttons with animation */}
-          <motion.div 
-            className="flex gap-6 flex-col sm:flex-row"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.8 }}
-          >
-            <Button size="lg" variant="default">
-              View My Work
-            </Button>
-            <Button size="lg" variant="outline">
-              Let&apos;s Connect
-            </Button>
-          </motion.div>
-        </div>
+      {/* Low opacity grid background for visual interest */}
+      <div className="absolute inset-0 -z-10 opacity-[0.03]">
+        <div className="h-full w-full bg-[linear-gradient(to_right,#8882_1px,transparent_1px),linear-gradient(to_bottom,#8882_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
       </div>
 
       {/* Decorative elements */}
-      <div className="absolute -z-10 w-full h-full pointer-events-none">
+      <div className="absolute -z-5 w-full h-full pointer-events-none">
         <motion.div 
           className="absolute w-64 h-64 rounded-full bg-primary/5 blur-3xl"
           animate={{ 
