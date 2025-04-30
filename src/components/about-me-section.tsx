@@ -169,11 +169,11 @@ export function AboutMeSection() {
                 <CardHeader className="p-0 mb-6">
                   <div className="flex items-center space-x-4">
                     <Avatar className="h-16 w-16 border-2 border-primary">
-                      <AvatarImage src="/your-avatar.jpg" alt="Your Name" />
-                      <AvatarFallback>YN</AvatarFallback>
+                      <AvatarImage src="/your-avatar.jpg" alt="Javier Goodall" />
+                      <AvatarFallback>JG</AvatarFallback>
                     </Avatar>
                     <div>
-                      <CardTitle className="text-3xl font-semibold">Your Name</CardTitle>
+                      <CardTitle className="text-3xl font-semibold">Javier Goodall</CardTitle>
                       <p className="text-slate-500">Frontend Developer</p>
                     </div>
                   </div>

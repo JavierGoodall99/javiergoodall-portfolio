@@ -2,28 +2,34 @@
 
 import React from "react"
 import { motion } from "framer-motion"
+import Image from "next/image"
 
 // Define the philosophy items
 const philosophies = [
   {
     statement: "Speed is a feature—but calm is a value",
-    description: "Fast interfaces are essential, but not at the expense of sudden movements that distract users from their goals. I build with the harmony of both in mind."
+    description: "Fast interfaces are essential, but not at the expense of sudden movements that distract users from their goals. I build with the harmony of both in mind.",
+    image: "/Speed.png"
   },
   {
     statement: "Design is how it works, not just how it looks",
-    description: "Beautiful aesthetics matter, but thoughtful interactions define the experience. Every element serves both form and function."
+    description: "Beautiful aesthetics matter, but thoughtful interactions define the experience. Every element serves both form and function.",
+    image: "/Design.png"
   },
   {
     statement: "Accessibility is not a feature, it's a requirement",
-    description: "I build for everyone—regardless of ability or context. Inclusive design creates better experiences for all users."
+    description: "I build for everyone—regardless of ability or context. Inclusive design creates better experiences for all users.",
+    image: "/Accessibility.png"
   },
   {
     statement: "Code is a means, not an end",
-    description: "Clean architecture matters, but user outcomes matter more. I optimize for maintainability without sacrificing the experience."
+    description: "Clean architecture matters, but user outcomes matter more. I optimize for maintainability without sacrificing the experience.",
+    image: "/Code.png"
   },
   {
     statement: "Less, but better",
-    description: "I believe in the power of restraint. Removing what's unnecessary often creates more impact than adding more features."
+    description: "I believe in the power of restraint. Removing what's unnecessary often creates more impact than adding more features.",
+    image: "/Less.png"
   }
 ]
 
@@ -78,14 +84,10 @@ export function PhilosophySection() {
                 </motion.p>
               </div>
 
-              {/* Visual element */}
+              {/* Visual element - replaced with image */}
               <div className="md:w-1/2">
                 <motion.div 
-                  className={`h-[300px] md:h-[400px] rounded-lg bg-gradient-to-br ${
-                    index % 2 === 0 
-                      ? 'from-primary/10 to-secondary/5' 
-                      : 'from-secondary/10 to-primary/5'
-                  }`}
+                  className="h-[300px] md:h-[400px] rounded-lg bg-muted/50 flex items-center justify-center p-8 relative"
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ 
                     opacity: 1, 
@@ -98,7 +100,12 @@ export function PhilosophySection() {
                     delay: 0.1
                   }}
                 >
-                  {/* Optional: Could add illustrations or icons here */}
+                  <Image 
+                    src={philosophy.image} 
+                    alt={philosophy.statement}
+                    fill
+                    className="object-cover rounded-lg"
+                  />
                 </motion.div>
               </div>
             </div>
