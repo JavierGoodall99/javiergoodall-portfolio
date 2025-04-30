@@ -18,7 +18,9 @@ const fadeIn = {
 }
 
 export default function ProjectPage({ params }: { params: { projectId: string } }) {
-  const projectId = params.projectId;
+  // Unwrap params using React.use()
+  const unwrappedParams = React.use(params as any);
+  const projectId = unwrappedParams.projectId;
   
   const project = projects.find((p) => p.id === projectId);
   
