@@ -5,6 +5,7 @@ import Image from "next/image"
 import { motion } from "framer-motion"
 import { ArrowLeft } from "lucide-react"
 import Link from "next/link"
+import React from "react"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -17,12 +18,12 @@ const fadeIn = {
 }
 
 export default function ProjectPage({ params }: { params: { projectId: string } }) {
-  // Find the project by ID
-  const project = projects.find((p) => p.id === params.projectId)
+  const projectId = params.projectId;
   
-  // If project not found, show 404 page
+  const project = projects.find((p) => p.id === projectId);
+  
   if (!project) {
-    notFound()
+    notFound();
   }
   
   return (
