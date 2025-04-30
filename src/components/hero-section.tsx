@@ -62,14 +62,14 @@ export function Hero() {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-xs uppercase tracking-wider text-muted-foreground font-medium"
+          className="text-sm uppercase tracking-wider text-muted-foreground font-medium"
         >
           Hi, I&apos;m Javier Goodall — Frontend Developer
         </motion.div>
 
         {/* Animated heading with word-by-word animation */}
         <motion.h1 
-          className="text-5xl md:text-6xl font-extrabold tracking-tight leading-tight"
+          className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight"
           variants={headlineVariants}
           initial="hidden"
           animate="visible"
@@ -90,7 +90,7 @@ export function Hero() {
 
         {/* Subheading with animation */}
         <motion.p 
-          className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto"
+          className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.8 }}
