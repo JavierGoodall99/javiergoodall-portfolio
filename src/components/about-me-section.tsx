@@ -138,7 +138,7 @@ export function AboutMeSection() {
                   {/* Hidden native audio element */}
                   <audio 
                     ref={audioRef} 
-                    src="/audio-introduction.mp3" 
+                    src="/IntuitiveDesign.wav" 
                     className="sr-only"
                     preload="metadata"
                   />
@@ -159,7 +159,7 @@ export function AboutMeSection() {
                   
                   {/* Caption */}
                   <p className="text-center text-sm text-muted-foreground">
-                    Listen to my 1-min philosophy on frontend
+                    Listen to my 5-min philosophy on frontend
                   </p>
                 </div>
               </div>
