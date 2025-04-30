@@ -33,7 +33,7 @@ export default function RootLayout({
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <header className="sticky top-0 z-40 w-full border-b shadow-sm bg-background/80 backdrop-blur-md">
-            <div className="container flex h-16 items-center justify-between px-6 sm:px-12 py-4">
+            <div className="w-full flex h-16 items-center justify-between">
               <div className="flex items-center">
                 <Link href="/" className="flex items-center font-mono text-xl font-semibold tracking-tight transition-colors hover:text-foreground/80">
                   <span>Javier Goodall</span>
@@ -46,9 +46,10 @@ export default function RootLayout({
                     <Link
                       key={index}
                       href={item.href}
-                      className="font-medium text-sm transition-colors hover:text-muted-foreground"
+                      className="relative font-medium text-sm transition-colors hover:text-foreground/80 group"
                     >
                       {item.title}
+                      <span className="absolute left-0 bottom-0 h-[1px] w-0 bg-foreground transition-all duration-300 group-hover:w-full"></span>
                     </Link>
                   ))}
                 </nav>
@@ -66,12 +67,14 @@ export default function RootLayout({
             </div>
           </header>
           
-          <main className="flex-1 container">
-            {children}
+          <main className="flex-1 w-full">
+            <div className="w-full">
+              {children}
+            </div>
           </main>
           
-          <footer className="border-t py-6">
-            <div className="container flex flex-col items-center justify-between gap-4 md:flex-row">
+          <footer className="border-t py-6 w-full">
+            <div className="w-full px-4 sm:px-8 lg:px-12 flex flex-col items-center justify-between gap-4 md:flex-row">
               <p className="text-center text-sm text-muted-foreground md:text-left">
                 &copy; {new Date().getFullYear()} YourName. All rights reserved.
               </p>
