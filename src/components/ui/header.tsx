@@ -1,41 +1,68 @@
+"use client"
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
+import { Button } from "@/components/ui/button";
 import { navItems } from "@/data/navigation";
+import { Home, User, FileText, Mail, LayoutGrid } from "lucide-react";
 
 export function Header() {
+  const pathname = usePathname();
+  
+  // Map of icons for each navigation item
+  const navIcons = {
+    "Home": Home,
+    "About": User,
+    "Blog": FileText,
+    "Contact": Mail,
+    "Work": LayoutGrid,
+    "Gallery": LayoutGrid, // Default fallback
+  };
+
   return (
-    <header className="sticky top-0 z-40 w-full border-b shadow-sm bg-background/80 backdrop-blur-md">
-      <div className="w-full flex h-16 items-center justify-between">
-        <div className="flex items-center">
-          <Link href="/" className="flex items-center font-mono text-xl font-semibold tracking-tight transition-colors hover:text-foreground/80">
-            <span>Javier Goodall</span>
+    <header className="fixed top-6 left-0 right-0 z-50 flex justify-center">
+      <div className="flex items-center rounded-full border bg-background/70 backdrop-blur-md shadow-md px-4 py-1 gap-1">
+        {/* Home link */}
+        <Button
+          variant="ghost"
+          size="sm"
+          className={`flex items-center gap-1 ${pathname === "/" ? "bg-muted text-foreground" : ""}`}
+          asChild
+        >
+          <Link href="/">
+            <Home className="h-4 w-4" />
+            <span>Home</span>
           </Link>
-        </div>
+        </Button>
         
-        <div className="flex items-center">
-          <nav className="hidden md:flex items-center gap-8 mr-4">
-            {navItems.map((item, index) => (
-              <Link
-                key={index}
-                href={item.href}
-                className="relative font-medium text-sm transition-colors hover:text-foreground/80 group"
-              >
-                {item.title}
-                <span className="absolute left-0 bottom-0 h-[1px] w-0 bg-foreground transition-all duration-300 group-hover:w-full"></span>
+        {/* Vertical divider */}
+        <div className="h-6 w-[1px] bg-border" />
+        
+        {/* Navigation links (excluding Home which we've already added) */}
+        {navItems.filter(item => item.title !== "Home").map((item) => {
+          const Icon = navIcons[item.title as keyof typeof navIcons] || Home;
+          return (
+            <Button
+              key={item.href}
+              variant="ghost"
+              size="sm"
+              className={`flex items-center gap-1 ${pathname === item.href ? "bg-muted text-foreground" : ""}`}
+              asChild
+            >
+              <Link href={item.href}>
+                <Icon className="h-4 w-4" />
+                <span>{item.title}</span>
               </Link>
-            ))}
-          </nav>
-          
-          <ThemeToggle />
-          
-          <button className="ml-4 p-2 rounded-md hover:bg-accent md:hidden">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-menu">
-              <line x1="4" x2="20" y1="12" y2="12"></line>
-              <line x1="4" x2="20" y1="6" y2="6"></line>
-              <line x1="4" x2="20" y1="18" y2="18"></line>
-            </svg>
-          </button>
-        </div>
+            </Button>
+          );
+        })}
+        
+        {/* Vertical divider before theme toggle */}
+        <div className="h-6 w-[1px] bg-border" />
+        
+        {/* Theme toggle */}
+        <ThemeToggle />
       </div>
     </header>
   );

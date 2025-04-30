@@ -13,16 +13,21 @@ export const navItems: NavItem[] = [
   {
     title: "About",
     href: "/about",
-    description: "Learn more about us"
+    description: "Learn more about me"
+  },
+  {
+    title: "Work",
+    href: "/work",
+    description: "View my projects and portfolio"
   },
   {
     title: "Blog",
     href: "/blog",
-    description: "Read our latest articles"
+    description: "Read my latest articles"
   },
   {
-    title: "Contact",
-    href: "/contact",
-    description: "Get in touch with us"
+    title: "Gallery",
+    href: "/gallery",
+    description: "View my photography and artwork"
   }
 ];
