@@ -1,6 +1,7 @@
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { Hero } from "@/components/hero-section";
 import { PhilosophySection } from "@/components/philosophy-section";
+import { ProjectsSection } from "@/components/projects-section";
 
 export default function Home() {
   return (
@@ -15,6 +16,9 @@ export default function Home() {
       
       {/* Philosophy section */}
       <PhilosophySection />
+      
+      {/* Projects section */}
+      <ProjectsSection />
     </div>
   );
 }
