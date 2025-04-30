@@ -1,6 +1,7 @@
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { Hero } from "@/components/hero-section";
 import { PhilosophySection } from "@/components/philosophy-section";
+import { FeaturedSection } from "@/components/featured-section";
 import { ProjectsSection } from "@/components/projects-section";
 
 export default function Home() {
@@ -16,6 +17,9 @@ export default function Home() {
       
       {/* Philosophy section */}
       <PhilosophySection />
+      
+      {/* Featured interactive section */}
+      <FeaturedSection />
       
       {/* Projects section */}
       <ProjectsSection />
