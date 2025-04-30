@@ -52,7 +52,8 @@ export function Hero() {
   const headlineWords = headlineText.split(" ")
 
   return (
-    <div 
+    <section 
+      id="hero"
       ref={heroRef}
       className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
     >
@@ -181,6 +182,6 @@ export function Hero() {
           }}
         />
       </div>
-    </div>
+    </section>
   )
 }

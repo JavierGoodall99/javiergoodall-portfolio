@@ -9,7 +9,7 @@ import { ArrowUpRight } from "lucide-react"
 
 export function ProjectsSection() {
   return (
-    <section className="py-24 md:py-32 lg:py-40 overflow-hidden">
+    <section id="projects" className="py-24 md:py-32 lg:py-40 overflow-hidden">
       <div className="container max-w-7xl mx-auto">
         <motion.h2 
           className="text-2xl md:text-3xl font-medium mb-8 md:mb-10 text-center"

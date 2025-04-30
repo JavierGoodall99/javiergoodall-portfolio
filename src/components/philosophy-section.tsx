@@ -29,7 +29,7 @@ const philosophies = [
 
 export function PhilosophySection() {
   return (
-    <section className="py-24 md:py-32 lg:py-40 overflow-hidden">
+    <section id="philosophy" className="py-24 md:py-32 lg:py-40 overflow-hidden">
       <div className="container max-w-6xl mx-auto px-4">
         <motion.h2 
           className="text-2xl md:text-3xl font-medium mb-16 md:mb-24 text-center"

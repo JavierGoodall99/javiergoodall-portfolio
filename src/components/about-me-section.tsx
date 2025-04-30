@@ -42,7 +42,7 @@ export function AboutMeSection() {
   }, []);
 
   return (
-    <section className="py-24 md:py-32 bg-muted">
+    <section id="about" className="py-24 md:py-32 bg-muted">
       <div className="container max-w-5xl mx-auto p-6 sm:p-10">
         <motion.h2 
           className="text-3xl md:text-4xl font-medium mb-12 text-center"

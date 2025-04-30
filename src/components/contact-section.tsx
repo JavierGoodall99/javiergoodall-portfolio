@@ -53,7 +53,7 @@ export function ContactSection() {
   }
 
   return (
-    <section className="py-24 md:py-32 bg-muted/30">
+    <section id="contact" className="py-24 md:py-32 bg-muted/30">
       <div className="container max-w-5xl mx-auto px-4">
         {/* Warm CTA heading */}
         <h2 className="text-3xl md:text-4xl font-medium mb-6 text-center">
