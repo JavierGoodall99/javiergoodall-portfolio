@@ -32,7 +32,7 @@ export default function ProjectPage() {
       {/* Back button */}
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
         <Button variant="ghost" size="sm" asChild>
-          <Link href="/" className="flex items-center gap-2 mb-8 text-muted-foreground">
+          <Link href="/" className="flex items-center gap-2 mb-6 mt-6 text-muted-foreground">
             <ArrowLeft size={16} />
             <span>Back to projects</span>
           </Link>
