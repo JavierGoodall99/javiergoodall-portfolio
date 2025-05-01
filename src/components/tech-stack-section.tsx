@@ -23,6 +23,11 @@ const techStack = [
     description: "Strong typing for scalable, maintainable, and error-resistant code"
   },
   {
+    name: "JavaScript",
+    icon: "javascript",
+    description: "Dynamic, event-driven programming for interactive web applications"
+  },
+  {
     name: "TailwindCSS",
     icon: "tailwind",
     description: "Utility-first CSS framework for rapid UI development with consistent design tokens"
@@ -33,9 +38,14 @@ const techStack = [
     description: "Beautifully designed components built with Radix UI and Tailwind CSS"
   },
   {
-    name: "Framer Motion",
-    icon: "framer",
-    description: "Production-ready animations and gestures for engaging user experiences"
+    name: "Sass",
+    icon: "sass",
+    description: "Modular, maintainable stylesheets using variables, mixins, and nested rules"
+  },
+  {
+    name: "Figma",
+    icon: "figma",
+    description: "Collaborative UI design and prototyping before implementation"
   },
   {
     name: "Node.js",
@@ -51,16 +61,6 @@ const techStack = [
     name: "Prisma",
     icon: "prisma",
     description: "Next-generation ORM for type-safe database access and migrations"
-  },
-  {
-    name: "GraphQL",
-    icon: "graphql",
-    description: "Efficient API queries with precise data fetching and strong typing"
-  },
-  {
-    name: "Figma",
-    icon: "figma",
-    description: "Collaborative UI design and prototyping before implementation"
   },
   {
     name: "Git",
