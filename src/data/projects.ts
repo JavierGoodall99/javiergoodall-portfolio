@@ -35,7 +35,7 @@ export const projects: Project[] = [
     url: "https://chatflow.app"
   },
   {
-    id: "web-portal-1910",
+    id: "web-portal of 1910",
     title: "A Web Portal Frozen in 1910",
     subtitle: "Alt-History Digital Experience",
     description:
@@ -44,7 +44,7 @@ export const projects: Project[] = [
     tags: ["Next.js", "TailwindCSS", "Framer Motion", "Vintage Typography"],
     impact:
       "Transformed frontend code into a speculative historical artifact—challenging modern UX assumptions through design, narrative, and deep immersion.",
-    url: "https://1910-web-portal.dev"
+    url: "https://year1910.vercel.app/"
   },
   {
     id: "healthcare-portal",

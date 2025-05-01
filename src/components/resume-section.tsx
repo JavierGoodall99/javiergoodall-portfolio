@@ -95,7 +95,7 @@ export function ResumeSection() {
                     <div className="absolute inset-0 flex flex-col items-center justify-center p-6 bg-background/60 backdrop-blur-sm">
                       <FileText className="h-12 w-12 text-primary/90 mb-4" />
                       <h3 className="text-xl font-semibold mb-2">Javier Goodall</h3>
-                      <p className="text-muted-foreground text-sm">Front-end Developer · TypeScript & React</p>
+                      <p className="text-muted-foreground text-sm">Front-end Developer</p>
                     </div>
                   </>
                 )}
