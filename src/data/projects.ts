@@ -47,13 +47,15 @@ export const projects: Project[] = [
     url: "https://year1910.vercel.app/"
   },
   {
-    id: "healthcare-portal",
-    title: "Healthcare Portal",
-    subtitle: "Patient Management System",
-    description: "A comprehensive portal connecting patients with healthcare providers, featuring appointment scheduling, secure messaging, and medical record access.",
-    imageUrl: "/projects/healthcare.webp",
-    tags: ["Vue.js", "Node.js", "MongoDB", "HIPAA Compliance"],
-    impact: "Reduced administrative tasks by 65% while improving patient satisfaction scores",
-    url: "https://healthcare-portal.dev"
+    id: "icon-library",
+    title: "Custom Icon Library",
+    subtitle: "Reusable Icon Component System",
+    description:
+    "A fully customizable icon library built with React and TypeScript. Users can adjust stroke width, size, and colors, and download icons as PNG or SVG. Designed for consistency, flexibility, and easy integration into any design system.",    
+    imageUrl: "iconlibrary.png",
+    tags: ["React", "TypeScript", "FluentUI", "Accessibility"],
+    impact:
+    "Empowered developers and designers to maintain brand consistency with flexible, themeable icons—while reducing asset management overhead through on-demand customization and export.",
+    url: "https://icon-library.azurewebsites.net/"
   }
 ];
