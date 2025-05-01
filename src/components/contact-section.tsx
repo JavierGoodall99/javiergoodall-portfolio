@@ -158,7 +158,7 @@ export function ContactSection() {
               <CardContent className="space-y-6">
                 <div className="transition-all hover:translate-x-1 duration-200">
                   <a 
-                    href="https://github.com/yourusername" 
+                    href="https://github.com/JavierGoodall99" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="flex items-center text-foreground hover:text-primary"
@@ -170,7 +170,7 @@ export function ContactSection() {
                 
                 <div className="transition-all hover:translate-x-1 duration-200">
                   <a 
-                    href="https://linkedin.com/in/yourusername" 
+                    href="https://www.linkedin.com/in/javier-goodall/" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="flex items-center text-foreground hover:text-primary"
@@ -182,7 +182,7 @@ export function ContactSection() {
                 
                 <div className="transition-all hover:translate-x-1 duration-200">
                   <a 
-                    href="mailto:your.email@example.com"
+                    href="mailto:javiergoodall@outlook.com"
                     className="flex items-center text-foreground hover:text-primary"
                   >
                     <Mail className="mr-2 h-5 w-5" />

@@ -223,7 +223,7 @@ export function AboutMeSection() {
                       asChild
                     >
                       <a 
-                        href="https://github.com/yourusername" 
+                        href="https://github.com/JavierGoodall99" 
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -238,7 +238,7 @@ export function AboutMeSection() {
                       asChild
                     >
                       <a 
-                        href="https://linkedin.com/in/yourusername" 
+                        href="https://www.linkedin.com/in/javier-goodall/" 
                         target="_blank"
                         rel="noopener noreferrer"
                       >
