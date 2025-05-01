@@ -21,6 +21,11 @@ export const navItems: NavItem[] = [
     description: "Read my latest articles"
   },
   {
+    title: "Tech Stack",
+    href: "/#tech-stack",
+    description: "Explore the technologies I use"
+  },
+  {
     title: "Projects",
     href: "/#projects",
     description: "View my projects and portfolio"

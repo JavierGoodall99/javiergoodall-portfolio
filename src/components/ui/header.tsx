@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { navItems } from "@/data/navigation";
-import { Home, User, FileText, Mail, LayoutGrid } from "lucide-react";
+import { Home, User, FileText, Mail, LayoutGrid, Monitor } from "lucide-react";
 import { motion } from "framer-motion";
 import {
   Tooltip,
@@ -13,18 +13,51 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { useEffect, useState } from "react";
 
 export function Header() {
   const pathname = usePathname();
+  const [activeSection, setActiveSection] = useState("hero");
 
-  // Map of icons for each navigation item
   const navIcons = {
     "Home": Home,
     "About": User,
     "Philosophy": FileText,
+    "Tech Stack": Monitor,
     "Projects": LayoutGrid,
     "Contact": Mail,
   };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        // Get the entries that are currently visible
+        const visibleEntries = entries.filter(entry => entry.isIntersecting);
+        
+        if (visibleEntries.length > 0) {
+          // Find the entry with the largest intersection ratio
+          const mostVisibleEntry = visibleEntries.reduce((prev, current) => {
+            return prev.intersectionRatio > current.intersectionRatio ? prev : current;
+          });
+          
+          setActiveSection(mostVisibleEntry.target.id);
+        }
+      },
+      { 
+        threshold: [0.1, 0.2, 0.3], 
+        rootMargin: "-50px 0px -50px 0px"
+      }
+    );
+
+    // Observe all sections
+    document.querySelectorAll('section[id]').forEach((section) => {
+      observer.observe(section);
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (href.startsWith('/#') && pathname === '/') {
@@ -49,8 +82,7 @@ export function Header() {
           <div className="flex items-center gap-6">
             {navItems.map((item) => {
               const Icon = navIcons[item.title as keyof typeof navIcons] || Home;
-              const isActive = pathname === '/' && item.href.substring(2) === 'hero' ? true : 
-                             pathname === '/' && item.href.includes(pathname + '#');
+              const isActive = item.href.substring(2) === activeSection;
 
               return (
                 <Tooltip key={item.href}>
