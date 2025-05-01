@@ -35,7 +35,7 @@ export const projects: Project[] = [
     url: "https://chatflow.app"
   },
   {
-    id: "web-portal of 1910",
+    id: "web-portal-1910",
     title: "A Web Portal Frozen in 1910",
     subtitle: "Alt-History Digital Experience",
     description:
