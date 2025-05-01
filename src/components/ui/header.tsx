@@ -31,9 +31,6 @@ export function Header() {
           behavior: 'smooth',
           block: 'start'
         });
-
-        // Update URL without reloading the page
-        window.history.pushState(null, '', href);
       }
     }
   };
