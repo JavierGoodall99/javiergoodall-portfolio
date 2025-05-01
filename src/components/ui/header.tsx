@@ -31,22 +31,13 @@ export function Header() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        // Get the entries that are currently visible
-        const visibleEntries = entries.filter(entry => entry.isIntersecting);
-        
-        if (visibleEntries.length > 0) {
-          // Find the entry with the largest intersection ratio
-          const mostVisibleEntry = visibleEntries.reduce((prev, current) => {
-            return prev.intersectionRatio > current.intersectionRatio ? prev : current;
-          });
-          
-          setActiveSection(mostVisibleEntry.target.id);
-        }
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
       },
-      { 
-        threshold: [0.1, 0.2, 0.3], 
-        rootMargin: "-50px 0px -50px 0px"
-      }
+      { threshold: 0.5 }
     );
 
     // Observe all sections
