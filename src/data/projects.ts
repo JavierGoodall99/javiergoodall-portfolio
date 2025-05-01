@@ -35,14 +35,16 @@ export const projects: Project[] = [
     url: "https://chatflow.app"
   },
   {
-    id: "mobile-banking-app",
-    title: "Mobile Banking App",
-    subtitle: "Financial Services",
-    description: "A mobile banking application designed for simplicity and security, allowing users to manage accounts, transfer funds, and track spending from anywhere.",
-    imageUrl: "/projects/banking.webp",
-    tags: ["React Native", "TypeScript", "Redux", "Biometrics"],
-    impact: "Achieved 4.8/5 rating on app stores with 200,000+ active monthly users",
-    url: "https://mobilebanking-demo.com"
+    id: "web-portal-1910",
+    title: "A Web Portal Frozen in 1910",
+    subtitle: "Alt-History Digital Experience",
+    description:
+      "A historically faithful reimagining of what the internet might look like if invented in 1910. The interface blends Edwardian-era design with modern frontend technology to create a narrative, tactile experience—complete with telegrams, thought archives, and card-catalog metaphors.",
+    imageUrl: "vintagenewspaper.png",
+    tags: ["Next.js", "TailwindCSS", "Framer Motion", "Vintage Typography"],
+    impact:
+      "Transformed frontend code into a speculative historical artifact—challenging modern UX assumptions through design, narrative, and deep immersion.",
+    url: "https://1910-web-portal.dev"
   },
   {
     id: "healthcare-portal",
