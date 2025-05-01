@@ -11,8 +11,8 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: "ruimijmwoning",
-    title: "Ruimijmwoning",
+    id: "ruimijnwoning",
+    title: "Ruimijnwoning",
     subtitle: "Real Estate Platform",
     description:
       "A property listing platform designed to help users find affordable housing opportunities in the Netherlands, featuring responsive layouts, fast filtering, and clean UI.",
