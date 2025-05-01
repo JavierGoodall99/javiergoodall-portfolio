@@ -100,10 +100,11 @@ export function Hero() {
   }
 
   const headlineWords = [
-    { text: "I", className: "font-light" },
-    { text: "choreograph", className: "font-black bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/70" },
-    { text: "attention.", className: "italic text-accent-foreground" }
+    { text: "Design-aware.", className: "font-semibold text-primary" },
+    { text: "Code-driven.", className: "font-semibold text-accent-foreground" },
+    { text: "Outcome-focused.", className: "font-semibold text-muted-foreground" }
   ]
+  
 
   const scrollToWork = () => {
     document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })
@@ -166,7 +167,7 @@ export function Hero() {
           className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-8"
           variants={itemVariants}
         >
-          Frontend developer who designs for clarity, not just code.
+          Because clarity in code and clarity in design lead to better outcomes.
         </motion.p>
 
         {/* Buttons with enhanced animation */}
