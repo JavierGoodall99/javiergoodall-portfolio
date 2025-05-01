@@ -55,6 +55,8 @@ export function Header() {
       e.preventDefault();
 
       const targetId = href.substring(2);
+      setActiveSection(targetId);
+      
       const targetElement = document.getElementById(targetId);
 
       if (targetElement) {
