@@ -24,6 +24,7 @@ type ContactFormValues = z.infer<typeof contactFormSchema>
 export function ContactSection() {
   const [isSubmitting, setIsSubmitting] = React.useState<boolean>(false)
   const [submitSuccess, setSubmitSuccess] = React.useState<boolean>(false)
+  const [submitError, setSubmitError] = React.useState<string>("")
 
   // Initialize react-hook-form
   const form = useForm<ContactFormValues>({
@@ -37,19 +38,39 @@ export function ContactSection() {
 
   const onSubmit = async (data: ContactFormValues) => {
     setIsSubmitting(true)
+    setSubmitError("")
     
-    // Simulate form submission
-    console.log("Form data:", data)
-    
-    // In a real app, you'd send this data to your backend or API
-    await new Promise((resolve) => setTimeout(resolve, 1500))
-    
-    setIsSubmitting(false)
-    setSubmitSuccess(true)
-    form.reset()
-    
-    // Reset success message after 5 seconds
-    setTimeout(() => setSubmitSuccess(false), 5000)
+    try {
+      // Create FormData for FormSubmit.co
+      const formData = new FormData()
+      formData.append('name', data.name)
+      formData.append('email', data.email)
+      formData.append('message', data.message)
+      formData.append('_subject', `New contact form submission from ${data.name}`)
+      formData.append('_captcha', 'false') // Disable captcha for better UX
+      formData.append('_template', 'table') // Use table template for better formatting
+
+      // Submit to FormSubmit.co
+      const response = await fetch('https://formsubmit.co/javiergoodall23@gmail.com', {
+        method: 'POST',
+        body: formData,
+      })
+
+      if (response.ok) {
+        setSubmitSuccess(true)
+        form.reset()
+        
+        // Reset success message after 5 seconds
+        setTimeout(() => setSubmitSuccess(false), 5000)
+      } else {
+        throw new Error('Failed to send message')
+      }
+    } catch (error) {
+      console.error('Form submission error:', error)
+      setSubmitError("Failed to send message. Please try again or email me directly.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -145,6 +166,12 @@ export function ContactSection() {
                     Message sent successfully! I&apos;ll be in touch soon.
                   </p>
                 )}
+                
+                {submitError && (
+                  <p className="text-sm text-destructive mt-2">
+                    {submitError}
+                  </p>
+                )}
               </form>
             </CardContent>
           </Card>
@@ -182,7 +209,7 @@ export function ContactSection() {
                 
                 <div className="transition-all hover:translate-x-1 duration-200">
                   <a 
-                    href="mailto:javiergoodall@outlook.com"
+                    href="mailto:javiergoodall23@gmail.com"
                     className="flex items-center text-foreground hover:text-primary"
                   >
                     <Mail className="mr-2 h-5 w-5" />
