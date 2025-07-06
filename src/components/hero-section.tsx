@@ -120,7 +120,7 @@ export function Hero() {
     >
       {/* Main content with scroll-based animation */}
       <motion.div 
-        className="max-w-5xl mx-auto px-6 py-32 text-center relative z-10"
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24 md:py-32 text-center relative z-10"
         style={{ opacity, scale }}
         variants={containerVariants}
         initial="hidden"
@@ -129,19 +129,20 @@ export function Hero() {
         {/* Label above heading */}
         <motion.div
           variants={itemVariants}
-          className="mb-6 inline-block"
+          className="mb-4 sm:mb-6 inline-block"
         >
-          <span className="text-xs uppercase tracking-widest text-muted-foreground font-medium px-4 py-2 rounded-full border border-border/30 backdrop-blur-sm bg-background/30">
-            Hi, I&apos;m Javier Goodall — Frontend Developer
+          <span className="text-xs sm:text-sm uppercase tracking-widest text-muted-foreground font-medium px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-border/30 backdrop-blur-sm bg-background/30">
+            <span className="hidden sm:inline">Hi, I&apos;m Javier Goodall — Frontend Developer</span>
+            <span className="sm:hidden">Javier Goodall — Frontend Dev</span>
           </span>
         </motion.div>
 
         {/* Animated heading with word-by-word animation and varied styling */}
         <motion.h1 
-          className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight mb-8"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-tight mb-6 sm:mb-8"
           variants={itemVariants}
         >
-          <div className="inline-flex flex-wrap justify-center gap-x-4">
+          <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center items-center gap-2 sm:gap-x-4">
             {headlineWords.map((word, wordIndex) => (
               <div key={wordIndex} className="overflow-hidden inline-block">
                 <div className={cn("inline-block", word.className)}>
@@ -155,7 +156,6 @@ export function Hero() {
                       {letter}
                     </motion.span>
                   ))}
-                  {wordIndex < headlineWords.length - 1 ? <span>&nbsp;</span> : null}
                 </div>
               </div>
             ))}
@@ -164,7 +164,7 @@ export function Hero() {
 
         {/* Subheading with animation */}
         <motion.p 
-          className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-8"
+          className="text-lg sm:text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto mb-6 sm:mb-8 px-4"
           variants={itemVariants}
         >
           Because clarity in code and clarity in design lead to better outcomes.
@@ -172,13 +172,13 @@ export function Hero() {
 
         {/* Buttons with enhanced animation */}
         <motion.div 
-          className="flex flex-col sm:flex-row gap-6 justify-center items-center"
+          className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center px-4"
           variants={itemVariants}
         >
           <Button 
             size="lg" 
             variant="default"
-            className="relative group transition-all duration-300 overflow-hidden"
+            className="relative group transition-all duration-300 overflow-hidden w-full sm:w-auto"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
             onClick={scrollToWork}
@@ -197,7 +197,8 @@ export function Hero() {
           </Button>
           
           <div className="text-sm text-muted-foreground flex items-center gap-2">
-            <span>or scroll down to see how I work</span>
+            <span className="hidden sm:inline">or scroll down to see how I work</span>
+            <span className="sm:hidden">scroll down to explore</span>
             <motion.div
               animate={{ y: [0, 5, 0] }}
               transition={{ repeat: Infinity, duration: 1.5 }}
@@ -231,38 +232,40 @@ export function Hero() {
       
         {/* SVG noise texture overlay */}
         <div className="absolute inset-0 opacity-[0.02]">
-          <div className="h-full w-full bg-[linear-gradient(to_right,#8882_1px,transparent_1px),linear-gradient(to_bottom,#8882_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+          <div className="h-full w-full bg-[linear-gradient(to_right,#8882_1px,transparent_1px),linear-gradient(to_bottom,#8882_1px,transparent_1px)] bg-[size:2rem_2rem] sm:bg-[size:4rem_4rem]"></div>
         </div>
         
-        {/* Animated particles with consistent values */}
-        {particlePositions.map((particle, index) => (
-          <motion.div
-            key={particle.id}
-            className="absolute rounded-full bg-primary/20"
-            style={{
-              width: particle.size,
-              height: particle.size,
-              left: `${particle.x}%`,
-              top: `${particle.y}%`,
-            }}
-            animate={{
-              x: [0, particle.x > 50 ? -30 : 30, 0],
-              y: [0, particle.y > 50 ? -30 : 30, 0],
-              opacity: [0, 0.8, 0]
-            }}
-            transition={{
-              duration: particleDurations[index],
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          />
-        ))}
+        {/* Animated particles with consistent values - hidden on mobile for performance */}
+        <div className="hidden sm:block">
+          {particlePositions.map((particle, index) => (
+            <motion.div
+              key={particle.id}
+              className="absolute rounded-full bg-primary/20"
+              style={{
+                width: particle.size,
+                height: particle.size,
+                left: `${particle.x}%`,
+                top: `${particle.y}%`,
+              }}
+              animate={{
+                x: [0, particle.x > 50 ? -30 : 30, 0],
+                y: [0, particle.y > 50 ? -30 : 30, 0],
+                opacity: [0, 0.8, 0]
+              }}
+              transition={{
+                duration: particleDurations[index],
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+          ))}
+        </div>
       </div>
 
-      {/* Larger decorative elements */}
+      {/* Larger decorative elements - scaled down on mobile */}
       <div className="absolute -z-5 w-full h-full pointer-events-none">
         <motion.div 
-          className="absolute w-96 h-96 rounded-full bg-gradient-to-br from-primary/5 to-accent/5 blur-3xl"
+          className="absolute w-48 h-48 sm:w-72 sm:h-72 lg:w-96 lg:h-96 rounded-full bg-gradient-to-br from-primary/5 to-accent/5 blur-3xl"
           animate={{ 
             x: [0, 30, 0],
             y: [0, -30, 0],
@@ -278,7 +281,7 @@ export function Hero() {
           }}
         />
         <motion.div 
-          className="absolute w-[30rem] h-[30rem] rounded-full bg-gradient-to-tr from-secondary/10 to-primary/5 blur-3xl"
+          className="absolute w-60 h-60 sm:w-80 sm:h-80 lg:w-[30rem] lg:h-[30rem] rounded-full bg-gradient-to-tr from-secondary/10 to-primary/5 blur-3xl"
           animate={{ 
             x: [0, -40, 0],
             y: [0, 40, 0],
@@ -296,7 +299,7 @@ export function Hero() {
       </div>
       
       <motion.div
-        className="hidden md:flex absolute bottom-12 left-1/2 -translate-x-1/2 items-center gap-2 text-xs text-muted-foreground opacity-50"
+        className="hidden lg:flex absolute bottom-12 left-1/2 -translate-x-1/2 items-center gap-2 text-xs text-muted-foreground opacity-50"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 0.5, y: 0 }}
         transition={{ delay: 2.5, duration: 1 }}
