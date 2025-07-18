@@ -32,7 +32,19 @@ export const projects: Project[] = [
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui"],
     impact:
       "Enabled solo business owners to create invoices and track payments directly from WhatsApp exports—bringing structure and professionalism to informal chat-based commerce.",
-    url: "https://chatflow.app"
+    url: "https://chatflow.studio/"
+  },
+  {
+    id: "newgenmarketing",
+    title: "NewGen Marketing",
+    subtitle: "Online Marketing Agency",
+    description:
+      "NewGen Marketing is an online marketing agency that helps businesses grow their online presence and increase their visibility in the market. We offer a range of services, including SEO, social media management, graphic design, and photography.",
+    imageUrl: "/newgenmarketing.png",
+    tags: ["React", "TypeScript", "Tailwind CSS", "shadcn/ui", "Framer Motion"],
+    impact:
+      "Helped local businesses increase website traffic by more than 200% through improved social media and digital branding strategies.",
+    url: "https://newgenmarketing.netlify.app/"
   },
   {
     id: "web-portal-1910",
@@ -56,6 +68,18 @@ export const projects: Project[] = [
     tags: ["React", "TypeScript", "FluentUI", "Accessibility"],
     impact:
     "Empowered developers and designers to maintain brand consistency with flexible, themeable icons—while reducing asset management overhead through on-demand customization and export.",
-    url: "https://icon-library.azurewebsites.net/"
-  }
+    url: "https://iconlib.vercel.app/"
+  },
+  {
+    id: "boutiquehotel",
+    title: "Boutique Hotel",
+    subtitle: "Hotel Booking Platform",
+    description:
+      "A hotel booking platform built with React and TypeScript. The interface is designed to be user-friendly and easy to navigate.",
+    imageUrl: "/boutiquehotel.png",
+    tags: ["React", "TypeScript", "TailwindCSS", "radix/ui"],
+    impact:
+      "Enabled users to book hotel rooms with ease, while providing a seamless experience for hotel staff to manage bookings and reservations.",
+    url: "https://boutiquehotel.netlify.app/"
+  },
 ];
