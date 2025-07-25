@@ -51,11 +51,11 @@ export const projects: Project[] = [
     title: "A Web Portal Frozen in 1910",
     subtitle: "Alt-History Digital Experience",
     description:
-      "A historically faithful reimagining of what the internet might look like if invented in 1910. The interface blends Edwardian-era design with modern frontend technology to create a narrative, tactile experience—complete with telegrams, thought archives, and card-catalog metaphors.",
+      "A historically faithful reimagining of what the internet might look like if invented in 1910. The interface blends Edwardian-era design with modern frontend technology to create a narrative, tactile experience complete with telegrams, thought archives, and card-catalog metaphors.",
     imageUrl: "/vintagenewspaper.png",
     tags: ["Next.js", "TailwindCSS", "Framer Motion", "Vintage Typography"],
     impact:
-      "Transformed frontend code into a speculative historical artifact—challenging modern UX assumptions through design, narrative, and deep immersion.",
+      "Transformed frontend code into a speculative historical artifact challenging modern UX assumptions through design, narrative, and deep immersion.",
     url: "https://year1910.vercel.app/"
   },
   {
@@ -67,7 +67,7 @@ export const projects: Project[] = [
     imageUrl: "/iconlibrary.png",
     tags: ["React", "TypeScript", "FluentUI", "Accessibility"],
     impact:
-      "Empowered developers and designers to maintain brand consistency with flexible, themeable icons—while reducing asset management overhead through on-demand customization and export.",
+      "Empowered developers and designers to maintain brand consistency with flexible, themeable icons while reducing asset management overhead through on-demand customization and export.",
     url: "https://iconlib.vercel.app/"
   },
   {

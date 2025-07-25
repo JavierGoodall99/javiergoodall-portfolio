@@ -7,7 +7,7 @@ import Image from "next/image"
 // Define the philosophy items
 const philosophies = [
   {
-    statement: "Speed is a feature—but calm is a value",
+    statement: "Speed is a feature but calm is a value",
     description: "Fast interfaces are essential, but not at the expense of sudden movements that distract users from their goals. I build with the harmony of both in mind.",
     image: "/Speed.png"
   },
@@ -18,7 +18,7 @@ const philosophies = [
   },
   {
     statement: "Accessibility is not a feature, it's a requirement",
-    description: "I build for everyone—regardless of ability or context. Inclusive design creates better experiences for all users.",
+    description: "I build for everyone regardless of ability or context. Inclusive design creates better experiences for all users.",
     image: "/Accessibility.png"
   },
   {

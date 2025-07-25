@@ -72,13 +72,13 @@ const techStack = [
 // Tech icon component
 function TechIcon({ name }: { name: string }) {
   return (
-    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-md bg-background flex items-center justify-center overflow-hidden">
+    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-md bg-background flex items-center justify-center overflow-hidden">
       <Image
         src={`/icons/${name}.svg`}
         alt={`${name} icon`}
-        width={24}
-        height={24}
-        className="h-5 w-5 sm:h-6 sm:w-6 object-contain"
+        width={32}
+        height={32}
+        className="h-7 w-7 sm:h-8 sm:w-8 object-contain"
       />
     </div>
   )
@@ -123,18 +123,11 @@ export function TechStackSection() {
             >
               <Card className="h-full hover:shadow-lg transition-all duration-300 border-border/40 hover:scale-105 group">
                 <CardHeader className="p-4 sm:p-5 md:p-6">
-                  <div className="flex items-start gap-3 mb-2 sm:mb-3">
-                    <div className="flex-shrink-0 mt-1">
-                      <TechIcon name={tech.icon} />
-                    </div>
-                    <div className="min-w-0 flex-1">
-                      <CardTitle className="text-base sm:text-lg md:text-xl leading-tight mb-1 sm:mb-2">
-                        {tech.name}
-                      </CardTitle>
-                      <CardDescription className="text-xs sm:text-sm md:text-base leading-relaxed line-clamp-3 group-hover:line-clamp-none transition-all duration-300">
-                        {tech.description}
-                      </CardDescription>
-                    </div>
+                  <div className="flex flex-col items-center gap-3 py-4">
+                    <TechIcon name={tech.icon} />
+                    <CardTitle className="text-base sm:text-lg md:text-xl text-center">
+                      {tech.name}
+                    </CardTitle>
                   </div>
                 </CardHeader>
               </Card>
