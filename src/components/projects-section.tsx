@@ -119,17 +119,16 @@ export function ProjectsSection() {
                 
                 {/* Action buttons */}
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
-                  <Button asChild variant="default" size="sm" className="w-full sm:w-auto">
+                  {/* <Button asChild variant="default" size="sm" className="w-full sm:w-auto">
                     <Link href={`/projects/${project.id}`}>
                       View Details
                     </Link>
-                  </Button>
-                  <Button asChild variant="outline" size="sm" className="w-full sm:w-auto">
+                  </Button> */}
+                  <Button asChild variant="default" size="sm" className="w-full sm:w-auto">
                     <a 
                       href={project.url} 
                       target="_blank" 
                       rel="noopener noreferrer" 
-                      className="flex items-center justify-center gap-1"
                     >
                       <span>Visit Site</span>
                       <svg 

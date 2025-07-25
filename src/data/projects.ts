@@ -6,7 +6,7 @@ export interface Project {
   imageUrl: string;
   tags: string[];
   impact: string;
-  url: string; 
+  url: string;
 }
 
 export const projects: Project[] = [
@@ -63,11 +63,11 @@ export const projects: Project[] = [
     title: "Custom Icon Library",
     subtitle: "Reusable Icon Component System",
     description:
-    "A fully customizable icon library built with React and TypeScript. Users can adjust stroke width, size, and colors, and download icons as PNG or SVG. Designed for consistency, flexibility, and easy integration into any design system.",    
+      "A fully customizable icon library built with React and TypeScript. Users can adjust stroke width, size, and colors, and download icons as PNG or SVG. Designed for consistency, flexibility, and easy integration into any design system.",
     imageUrl: "/iconlibrary.png",
     tags: ["React", "TypeScript", "FluentUI", "Accessibility"],
     impact:
-    "Empowered developers and designers to maintain brand consistency with flexible, themeable icons—while reducing asset management overhead through on-demand customization and export.",
+      "Empowered developers and designers to maintain brand consistency with flexible, themeable icons—while reducing asset management overhead through on-demand customization and export.",
     url: "https://iconlib.vercel.app/"
   },
   {
@@ -82,4 +82,17 @@ export const projects: Project[] = [
       "Enabled users to book hotel rooms with ease, while providing a seamless experience for hotel staff to manage bookings and reservations.",
     url: "https://boutiquehotel.netlify.app/"
   },
+  {
+    id: "contemporaryphotography",
+    title: "Contemporary Photography",
+    subtitle: "Photography Portfolio",
+    description:
+      "A clean and minimal photography portfolio built with React and TypeScript. It showcases high-resolution imagery with smooth transitions and an intuitive layout.",
+    imageUrl: "/contemporaryphotography.png",
+    tags: ["React", "TypeScript", "TailwindCSS", "radix/ui"],
+    impact:
+      "Provided a professional platform for photographers to display their work, attract clients, and build an online presence with fast load times and mobile responsiveness.",
+    url: "https://elana-photography.netlify.app/"
+  }
+
 ];
