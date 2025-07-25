@@ -28,6 +28,11 @@ const techStack = [
     description: "Dynamic, event-driven programming for interactive web applications"
   },
   {
+    name: "Figma",
+    icon: "figma",
+    description: "Collaborative UI design and prototyping before implementation"
+  },
+  {
     name: "TailwindCSS",
     icon: "tailwind",
     description: "Utility-first CSS framework for rapid UI development with consistent design tokens"
@@ -43,11 +48,6 @@ const techStack = [
     description: "Modular, maintainable stylesheets using variables, mixins, and nested rules"
   },
   {
-    name: "Figma",
-    icon: "figma",
-    description: "Collaborative UI design and prototyping before implementation"
-  },
-  {
     name: "Node.js",
     icon: "nodejs",
     description: "Server-side JavaScript runtime for building scalable API backends"
@@ -58,9 +58,9 @@ const techStack = [
     description: "Robust relational database for complex data relationships"
   },
   {
-    name: "Prisma",
-    icon: "prisma",
-    description: "Next-generation ORM for type-safe database access and migrations"
+    name: "Supabase",
+    icon: "supabase",
+    description: "Database and authentication service for building web and mobile applications"
   },
   {
     name: "Git",
